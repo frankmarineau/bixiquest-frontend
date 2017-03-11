@@ -1,15 +1,16 @@
 import CoreLayout from '../layouts/CoreLayout'
-import Home from 'views/Home'
 import { toAsync } from './AsyncComponent'
 
 export default store => ({
   path: '/',
   component: CoreLayout,
-  indexRoute: { component: Home },
+  indexRoute: {
+    component: toAsync(() => import('views/JourneyList'))
+  },
   childRoutes: [
     {
-      path: 'counter',
-      component: toAsync(() => import('views/Counter'))
+      path: '/journeys/:journeyId',
+      component: toAsync(() => import('views/JourneyDetails'))
     }
   ]
 })
