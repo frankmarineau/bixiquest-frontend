@@ -6,10 +6,11 @@ const JourneyMap = ({ journey }) => (
     defaultZoom={13}
     defaultCenter={{ lat: journey.steps[0].station.pos[0], lng: journey.steps[0].station.pos[1] }}
   >
-    {journey.steps.map(step => (
+    {journey.steps.map((step, i) => (
       <Marker
         key={step.id}
         position={{ lat: step.station.pos[0], lng: step.station.pos[1] }}
+        label={String(i + 1)}
       />
     ))}
 
