@@ -3,7 +3,8 @@ import styles from './styles.scss'
 import { connect } from 'react-redux'
 import CSSModules from 'react-css-modules'
 import { fetchJourneys } from 'store/journeys/actions'
-import { Link } from 'react-router'
+
+import JourneyCard from 'components/JourneyCard'
 
 const mapStateToProps = ({ journeys }) => ({
   journeys: journeys.journeys
@@ -14,7 +15,8 @@ const mapActionCreators = {
 }
 
 @connect(mapStateToProps, mapActionCreators)
-class JourneyList extends Component {
+@CSSModules(styles, { allowMultiple: true })
+export default class JourneyList extends Component {
   componentWillMount() {
     const { journeys, fetchJourneys } = this.props
     if (!journeys.length) fetchJourneys()
@@ -24,16 +26,11 @@ class JourneyList extends Component {
     const { journeys } = this.props
 
     return (
-      <div>
-        <h4>Journeys</h4>
+      <div styleName='container'>
         {journeys.map(journey =>
-          <ul key={journey.id}>
-            <li><Link to={`/journeys/${journey.id}`}>{journey.name}</Link></li>
-          </ul>
+          <JourneyCard journey={journey} key={journey.id} />
         )}
       </div>
     )
   }
 }
-
-export default CSSModules(styles, { allowMultiple: true })(JourneyList)

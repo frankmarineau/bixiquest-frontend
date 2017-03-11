@@ -1,8 +1,22 @@
 import React from 'react'
 import { withGoogleMap, GoogleMap, Marker, Polyline } from 'react-google-maps'
 
+const onMapLoad = steps => map => {
+  const stepCoords = steps.map(step =>
+    new google.maps.LatLng(step.station.pos[0], step.station.pos[1])
+  )
+  const bounds = new google.maps.LatLngBounds()
+
+  stepCoords.forEach(coord => {
+    bounds.extend(coord)
+  })
+
+  map.fitBounds(bounds)
+}
+
 const JourneyMap = ({ journey }) => (
   <GoogleMap
+    ref={onMapLoad(journey.steps)}
     defaultZoom={13}
     defaultCenter={{ lat: journey.steps[0].station.pos[0], lng: journey.steps[0].station.pos[1] }}
     scrollwheel={false}

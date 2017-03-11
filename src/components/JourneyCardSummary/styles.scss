@@ -1,0 +1,20 @@
+@import 'src/styles/common';
+
+.container {
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+.name {
+  font-size: 23px;
+  margin: 0;
+}
+
+.type {
+  margin-right: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,4 +1,13 @@
-.active {
-  font-weight: bold;
-  text-decoration: underline;
+@import 'src/styles/common';
+
+.container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  padding: 15px 0;
+  background-color: #3be8b0;
+}
+
+.logo {
+  height: 25px;
 }

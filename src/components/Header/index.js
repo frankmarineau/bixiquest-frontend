@@ -1,14 +1,13 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
 import styles from './styles.scss'
 import CSSModules from 'react-css-modules'
+import { Link } from 'react-router'
 
 export const Header = () => (
-  <div>
-    <h1>React Redux Starter Kit</h1>
-    <IndexLink to='/'>
-      Home
-    </IndexLink>
+  <div styleName='container'>
+    <Link to='/'>
+      <img src={require('./logo.png')} styleName='logo' />
+    </Link>
   </div>
 )
 
