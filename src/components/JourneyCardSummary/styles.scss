@@ -8,7 +8,27 @@
 
 .name {
   font-size: 23px;
-  margin: 0;
+  margin: 0 0 5px 0;
+}
+
+.statistics {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.statistic {
+  display: flex;
+  align-items: center;
+  margin-left: 22px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.logo {
+  margin-right: 5px;
+  height: 20px;
 }
 
 .type {

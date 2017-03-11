@@ -1,17 +1,32 @@
 import React from 'react'
 import styles from './styles.scss'
 import CSSModules from 'react-css-modules'
+import InlineSVG from 'svg-inline-react'
+import { flatten } from 'lodash'
 
-export const JourneyCardSummary = ({ journey }) => (
+const stepList = steps => flatten(steps.map(step =>
+  step.places.map(place => place.type)
+)).join(', ')
+
+export const JourneyCardSummary = ({ journey: { name, rating, distance, duration, steps } }) => (
   <div styleName='container'>
-    <h3 styleName='name'>{journey.name}</h3>
-    <h4>{journey.distance}km - {journey.duration}m</h4>
+    <h3 styleName='name'>{name}</h3>
+    <div styleName='statistics'>
+      <div styleName='statistic'>
+        <InlineSVG src={require('./ic_star_rate_black_18px.svg')} raw styleName='logo' />
+        <div>{rating}</div>
+      </div>
+      <div styleName='statistic'>
+        <InlineSVG src={require('./ic_directions_bike_black_18px.svg')} raw styleName='logo' />
+        <div>{distance} km</div>
+      </div>
+      <div styleName='statistic'>
+        <InlineSVG src={require('./ic_access_time_black_18px.svg')} raw styleName='logo' />
+        <div>{duration} min.</div>
+      </div>
+    </div>
     <div>
-      {journey.steps.map(step =>
-        step.places.map(place =>
-          <span styleName='type'>{place.type}</span>
-        )
-      )}
+      {stepList(steps)}
     </div>
   </div>
 )
