@@ -1,0 +1,24 @@
+.container {
+  background-color: #FFF;
+  padding-bottom: 5px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 75px;
+  height: 75px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.name {
+  margin-left: 15px;
+}
+
+.description {
+  margin-left: 15px;
+}

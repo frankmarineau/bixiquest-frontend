@@ -7,6 +7,7 @@ import { journeyFromUrl } from 'store/journeys/selectors'
 
 import JourneyMap from 'components/JourneyMap'
 import JourneySummary from 'components/JourneySummary'
+import PlaceCard from 'components/PlaceCard'
 
 const mapStateToProps = (state, props) => ({
   journey: journeyFromUrl(state, props),
@@ -40,12 +41,7 @@ class JourneyDetails extends Component {
           }
         />
         <JourneySummary journey={journey} />
-        <h4>Steps</h4>
-        <ul>
-          {journey.steps.map(step =>
-            <li key={step.id}>{step.station.name}</li>
-          )}
-        </ul>
+        <PlaceCard place={journey.steps[0].places[0]} />
       </div>
     )
   }
