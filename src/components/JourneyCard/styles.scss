@@ -1,11 +1,13 @@
 @import 'src/styles/common';
 
 .container {
-  background-color: white;
+  background-color: #eee;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-radius: 5px;
+  overflow: hidden;
   display: block;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
 
   &:last-child {
     border-bottom: 0;
