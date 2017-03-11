@@ -5,6 +5,11 @@ const JourneyMap = ({ journey }) => (
   <GoogleMap
     defaultZoom={13}
     defaultCenter={{ lat: journey.steps[0].station.pos[0], lng: journey.steps[0].station.pos[1] }}
+    scrollwheel={false}
+    draggable={false}
+    navigationControl={false}
+    mapTypeControl={false}
+    scaleControl={false}
   >
     {journey.steps.map((step, i) => (
       <Marker

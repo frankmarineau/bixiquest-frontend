@@ -183,7 +183,7 @@ webpackConfig.module.loaders.push(
   { test: /\.ttf(\?.*)?$/,   loader: 'url-loader?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/octet-stream' },
   { test: /\.eot(\?.*)?$/,   loader: 'file-loader?prefix=fonts/&name=[path][name].[ext]' },
   { test: /\.(png|jpg)$/,    loader: 'url-loader?limit=8192' },
-  { test: /\.svg$/,          loader: 'svg-inline' }
+  { test: /\.svg$/,          loader: 'svg-inline-loader' }
 )
 /* eslint-enable */
 

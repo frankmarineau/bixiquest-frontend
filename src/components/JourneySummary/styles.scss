@@ -1,0 +1,30 @@
+.container {
+  padding: 0 8px;
+}
+
+.name {
+  margin-bottom: 8px;
+}
+
+.author {
+  margin-top: 5px;
+}
+
+.statistics {
+  display: flex;
+}
+
+.statistic {
+  display: flex;
+  align-items: center;
+  margin-left: 22px;
+
+  &:first-child {
+      margin-left: 0;
+  }
+}
+
+.logo {
+  margin-right: 5px;
+  height: 20px;
+}

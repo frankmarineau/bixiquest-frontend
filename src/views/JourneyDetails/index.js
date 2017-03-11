@@ -6,6 +6,7 @@ import { fetchJourneys } from 'store/journeys/actions'
 import { journeyFromUrl } from 'store/journeys/selectors'
 
 import JourneyMap from 'components/JourneyMap'
+import JourneySummary from 'components/JourneySummary'
 
 const mapStateToProps = (state, props) => ({
   journey: journeyFromUrl(state, props),
@@ -29,7 +30,6 @@ class JourneyDetails extends Component {
 
     return (
       <div>
-        <h3>{journey.name}</h3>
         <JourneyMap
           journey={journey}
           containerElement={
@@ -39,6 +39,7 @@ class JourneyDetails extends Component {
             <div style={{ height: `400px` }} />
           }
         />
+        <JourneySummary journey={journey} />
         <h4>Steps</h4>
         <ul>
           {journey.steps.map(step =>

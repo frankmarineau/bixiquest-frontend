@@ -5,6 +5,7 @@ export const list = async coords => ({
     author: 'Jesse Thebest',
     distance: 40,
     duration: 150,
+    rating: 4,
     steps: [{
       id: 1,
       station: {
