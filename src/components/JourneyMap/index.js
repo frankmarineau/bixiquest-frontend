@@ -14,18 +14,18 @@ const onMapLoad = steps => map => {
   map.fitBounds(bounds)
 }
 
-const JourneyMap = ({ journey }) => (
+const JourneyMap = ({ journey: { steps } }) => (
   <GoogleMap
-    ref={onMapLoad(journey.steps)}
+    ref={onMapLoad(steps)}
     defaultZoom={13}
-    defaultCenter={{ lat: journey.steps[0].station.pos[0], lng: journey.steps[0].station.pos[1] }}
+    defaultCenter={{ lat: steps[0].station.pos[0], lng: steps[0].station.pos[1] }}
     scrollwheel={false}
     draggable={false}
     navigationControl={false}
     mapTypeControl={false}
     scaleControl={false}
   >
-    {journey.steps.map((step, i) => (
+    {steps.map((step, i) => (
       <Marker
         key={step.id}
         position={{ lat: step.station.pos[0], lng: step.station.pos[1] }}
@@ -33,7 +33,7 @@ const JourneyMap = ({ journey }) => (
       />
     ))}
 
-    <Polyline path={journey.steps.map(s => ({ lat: s.station.pos[0], lng: s.station.pos[1] }))} />
+    <Polyline path={steps.map(s => ({ lat: s.station.pos[0], lng: s.station.pos[1] }))} />
   </GoogleMap>
 )
 
