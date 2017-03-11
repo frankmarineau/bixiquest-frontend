@@ -19,7 +19,7 @@ export const JourneySummary = ({ journey: { name, author, distance, duration, ra
       </div>
       <div styleName='statistic'>
         <InlineSVG src={require('./ic_access_time_black_18px.svg')} raw styleName='logo' />
-        <div>{duration} m</div>
+        <div>{duration} min.</div>
       </div>
     </div>
   </div>
