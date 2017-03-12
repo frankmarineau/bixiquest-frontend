@@ -1,6 +1,14 @@
 .container {
+  padding-top: 10px;
+  padding-left: 10px;
   background-color: #FFF;
   padding-bottom: 5px;
+
+  border-bottom: solid 1px #eee;
+
+  &:last-child {
+    border-bottom: 0;
+  }
 }
 
 .header {
@@ -11,6 +19,8 @@
 .thumbnail {
   width: 75px;
   height: 75px;
+  border-radius: 50%;
+  
   background-size: cover;
   background-position: center center;
 }
@@ -20,5 +30,13 @@
 }
 
 .description {
-  margin-left: 15px;
+  margin-left: 0;
+  font-style: italic;
+}
+
+.click-arrow {
+  position: absolute;
+  right: 10px;
+  width: 32px;
+  height: 32px;
 }

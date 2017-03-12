@@ -9,8 +9,9 @@ export const PlaceCard = ({ place: { name, image_url, description } }) => (
     <div styleName='header'>
       <div style={{backgroundImage: `url(${image_url})`}} styleName='thumbnail'/>
       <h3 styleName='name'>{name}</h3>
+      <InlineSVG src={require('./ic_keyboard_arrow_right_black_24px.svg')} raw styleName='click-arrow' />
     </div>
-    <p styleName='description'>{description}</p>
+    <blockquote styleName='description'>{description}</blockquote>
   </div>
 )
 

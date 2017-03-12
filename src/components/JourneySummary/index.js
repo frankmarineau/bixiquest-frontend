@@ -10,15 +10,15 @@ export const JourneySummary = ({ journey: { name, author, distance, duration, ra
     <p styleName='author'>Created by <em>{author}</em></p>
     <div styleName='statistics'>
       <div styleName='statistic'>
-        <InlineSVG src={require('./ic_star_rate_black_18px.svg')} raw styleName='logo' />
+        <InlineSVG src={require('./ic_star_rate_black_18px.svg')} raw styleName='icon' />
         <div>{rating}</div>
       </div>
       <div styleName='statistic'>
-        <InlineSVG src={require('./ic_directions_bike_black_18px.svg')} raw styleName='logo' />
+        <InlineSVG src={require('./ic_directions_bike_black_18px.svg')} raw styleName='icon' />
         <div>{distance} km</div>
       </div>
       <div styleName='statistic'>
-        <InlineSVG src={require('./ic_access_time_black_18px.svg')} raw styleName='logo' />
+        <InlineSVG src={require('./ic_access_time_black_18px.svg')} raw styleName='icon' />
         <div>{duration} min.</div>
       </div>
     </div>
