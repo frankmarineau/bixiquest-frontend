@@ -47,6 +47,7 @@ class JourneyMap extends Component {
 
         <Polyline
           path={overviewPath.map(p => ({ lat: p[0], lng: p[1] }))}
+          options={{ strokeColor: '#472f92' }}
         />
       </GoogleMap>
     )
