@@ -19,7 +19,6 @@ class JourneyMap extends Component {
   render() {
     const { steps, overviewPath } = this.props.journey
 
-    console.log(overviewPath.map(p => ({ lat: p[1], lng: p[0] })))
     return (
       <GoogleMap
         ref={this.onMapLoad}
@@ -35,7 +34,7 @@ class JourneyMap extends Component {
           clickableIcons: false,
           disableDoubleClickZoom: false,
           fullscreenControl: false,
-          zoomControl: true,
+          zoomControl: false,
         }}
       >
         {steps.map((step, i) => (
@@ -47,7 +46,7 @@ class JourneyMap extends Component {
         ))}
 
         <Polyline
-          path={overviewPath.map(p => ({ lat: p[1], lng: p[0] }))}
+          path={overviewPath.map(p => ({ lat: p[0], lng: p[1] }))}
         />
       </GoogleMap>
     )
