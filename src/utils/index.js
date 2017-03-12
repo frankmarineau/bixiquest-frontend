@@ -8,3 +8,7 @@ export function formatDistance(distance) {
 export function formatDuration(duration) {
   return moment.duration(duration, 'seconds').minutes() + ' biking minutes'
 }
+
+export function mapsLink(lat, lng) {
+  return `http://maps.google.com/maps?t=m&q=${lat}+${lng}`
+}

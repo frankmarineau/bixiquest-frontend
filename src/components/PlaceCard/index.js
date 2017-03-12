@@ -9,8 +9,8 @@ const makeImageUrl = photoReference => (
   `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoReference}&key=${apiKey}`
 )
 
-export const PlaceCard = ({ place: { place: { name, photos }, description } }) => (
-  <div styleName='container'>
+export const PlaceCard = ({ place: { place: { name, photos, url }, description } }) => (
+  <div styleName='container' onClick={() => window.location = url}>
     <div styleName='header'>
       <div style={{ backgroundImage: `url(${makeImageUrl(photos[0].photo_reference)})` }} styleName='thumbnail' />
       <h3 styleName='name'>{name}</h3>

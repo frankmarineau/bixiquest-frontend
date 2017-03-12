@@ -2,7 +2,7 @@ import React from 'react'
 import InlineSVG from 'svg-inline-react'
 import styles from './styles.scss'
 import CSSModules from 'react-css-modules'
-import { formatDistance } from 'utils'
+import { formatDistance, mapsLink } from 'utils'
 
 import PlaceCard from 'components/PlaceCard'
 import MuralCard from 'components/MuralCard'
@@ -20,7 +20,9 @@ export const JourneyStep = ({ step: { murals, places, distance, bixiStation }, i
           styleName='icon'
         />
       </div>
-      <p styleName='distance'>{distance && formatDistance(distance.value)} to <a styleName='station' href='#'>{bixiStation.name}</a></p>
+      <p styleName='distance'>
+        {distance && formatDistance(distance.value)} to <a styleName='station' href={mapsLink(bixiStation.pos.coordinates[1], bixiStation.pos.coordinates[0])}>{bixiStation.name}</a>
+      </p>
     </div>
 
     {places.map(place =>
