@@ -5,8 +5,9 @@ import CSSModules from 'react-css-modules'
 import { formatDistance } from 'utils'
 
 import PlaceCard from 'components/PlaceCard'
+import MuralCard from 'components/MuralCard'
 
-export const JourneyStep = ({ step: { places, distance, bixiStation }, isFirst, stepNumber }) => (
+export const JourneyStep = ({ step: { murals, places, distance, bixiStation }, isFirst, stepNumber }) => (
   <div styleName='container'>
     <div styleName='travel'>
       <h1 styleName='step-number'>{stepNumber}</h1>
@@ -24,6 +25,10 @@ export const JourneyStep = ({ step: { places, distance, bixiStation }, isFirst, 
 
     {places.map(place =>
       <PlaceCard key={place.id} place={place} />
+    )}
+
+    {murals.slice(stepNumber % murals.length, (stepNumber + 1) % murals.length).map(mural =>
+      <MuralCard key={mural.id} mural={mural} />
     )}
   </div>
 )
