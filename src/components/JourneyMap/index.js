@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { withGoogleMap, GoogleMap, Marker, Polyline } from 'react-google-maps'
 import mapStyle from './mapStyle'
+import { flatten } from 'lodash'
 
 class JourneyMap extends Component {
   onMapLoad = map => {
     if (!map) return
+
     const stepCoords = this.props.journey.steps.map(step =>
       new google.maps.LatLng(step.bixiStation.pos.coordinates[1], step.bixiStation.pos.coordinates[0])
     )
@@ -44,12 +46,23 @@ class JourneyMap extends Component {
             position={{ lat: step.bixiStation.pos.coordinates[1], lng: step.bixiStation.pos.coordinates[0] }}
             icon={{
               url: '/marker.png',
-              anchor: {x: 12, y: 12}
+              anchor: { x: 12, y: 12 }
             }}
             label={{
               text: String(i + 1),
               color: '#fff',
               fontWeight: 'bold'
+            }}
+          />
+        ))}
+
+        {flatten(steps.map(s => s.places)).map(place => (
+          <Marker
+            key={place.id}
+            position={{ lat: place.place.geometry.location.lat, lng: place.place.geometry.location.lng }}
+            icon={{
+              url: '/place.png',
+              anchor: { x: 12, y: 12 }
             }}
           />
         ))}
