@@ -14,7 +14,7 @@ export const JourneyStep = ({ step: { places, distance, bixiStation }, isFirst, 
       <InlineSVG src={require(
         isFirst ? './ic_directions_walk_black_24px.svg' : './ic_directions_bike_black_18px.svg' 
         )} raw styleName='icon' />
-      <p styleName='distance'>{formatDistance(distance)} m to <a styleName='station' href='#'>{bixiStation.name}</a></p>
+      <p styleName='distance'>{formatDistance(distance)} to <a styleName='station' href='#'>{bixiStation.name}</a></p>
     </div>
 
     {places.map(place =>

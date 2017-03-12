@@ -6,7 +6,7 @@ import { flatten, uniq } from 'lodash'
 import { formatDistance } from 'utils'
 
 const stepIcons = steps => uniq(flatten(steps.map(step =>
-  step.places.map(place => place.type_url)
+  step.places.map(place => place.place.icon)
 )))
 
 export const JourneyCardSummary = ({ journey: { name, rating, distance, duration, steps } }) => (

@@ -7,4 +7,10 @@ export const fetchJourneys = createAction('fetch journeys', () => async dispatch
   dispatch(setJourneys(journeys))
 })
 
+export const fetchJourney = createAction('fetch journey', (id) => async dispatch => {
+  const { journey } = await API.get(id)
+  dispatch(setCurrentJourney(journey))
+})
+
 export const setJourneys = createAction('set journeys')
+export const setCurrentJourney = createAction('set current journey')

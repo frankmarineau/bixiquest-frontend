@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from './styles.scss'
 import { connect } from 'react-redux'
 import CSSModules from 'react-css-modules'
-import { fetchJourneys } from 'store/journeys/actions'
+import { fetchJourney } from 'store/journeys/actions'
 import { journeyFromUrl } from 'store/journeys/selectors'
 
 import JourneyMap from 'components/JourneyMap'
@@ -10,24 +10,24 @@ import JourneySummary from 'components/JourneySummary'
 import JourneyStep from 'components/JourneyStep'
 
 const mapStateToProps = (state, props) => ({
-  journey: journeyFromUrl(state, props),
-  journeyCount: state.journeys.journeys.length
+  journey: state.journeys.currentJourney
 })
 
 const mapActionCreators = {
-  fetchJourneys
+  fetchJourney
 }
 
 @connect(mapStateToProps, mapActionCreators)
 class JourneyDetails extends Component {
   componentWillMount() {
-    const { journeyCount, fetchJourneys } = this.props
-    if (!journeyCount) fetchJourneys()
+    const { fetchJourney, journey } = this.props
+    if (!journey || journey.id !== this.props.params.journeyId) fetchJourney(this.props.params.journeyId)
   }
 
   render() {
-    const { journey, journeyCount } = this.props
-    if (!journeyCount) return null
+    const { journey } = this.props
+    if (!journey) return null
+    if (journey.id !== this.props.params.journeyId) return null
 
     return (
       <div>
