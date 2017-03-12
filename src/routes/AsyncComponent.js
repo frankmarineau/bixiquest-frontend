@@ -13,7 +13,18 @@ export default class AsyncComponent extends React.Component {
   render() {
     const { Component } = this.state
     if (Component) return <Component {...this.props} />
-    return <div>Loading...</div>
+    return (
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'middle',
+          height: 'calc(100% - 60px)'
+        }}
+      >
+        <h4 style={{ textAlign: 'center', width: '100%' }}>Loading...</h4>
+      </div>
+    )
   }
 }
 
