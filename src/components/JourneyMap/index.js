@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withGoogleMap, GoogleMap, Marker, Polyline } from 'react-google-maps'
+import mapStyle from './mapStyle'
 
 class JourneyMap extends Component {
   onMapLoad = map => {
@@ -22,7 +23,6 @@ class JourneyMap extends Component {
     return (
       <GoogleMap
         ref={this.onMapLoad}
-        defaultZoom={13}
         defaultCenter={{ lat: steps[0].bixiStation.pos.coordinates[1], lng: steps[0].bixiStation.pos.coordinates[0] }}
         options={{
           scrollwheel: false,
@@ -35,6 +35,7 @@ class JourneyMap extends Component {
           disableDoubleClickZoom: true,
           fullscreenControl: false,
           zoomControl: false,
+          styles: mapStyle
         }}
       >
         {steps.map((step, i) => (
@@ -47,7 +48,7 @@ class JourneyMap extends Component {
 
         <Polyline
           path={overviewPath.map(p => ({ lat: p[0], lng: p[1] }))}
-          options={{ strokeColor: '#472f92' }}
+          options={{ strokeColor: '#472f92', strokeWeight: 5 }}
         />
       </GoogleMap>
     )
