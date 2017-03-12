@@ -18,15 +18,17 @@
 
 .thumbnail {
   width: 50px;
+  min-width: 50px;
   height: 50px;
   border-radius: 50%;
-  
+
   background-size: cover;
   background-position: center center;
 }
 
 .name {
   margin-left: 15px;
+  flex-grow: 1;
 }
 
 .description {
@@ -35,8 +37,9 @@
 }
 
 .click-arrow {
-  position: absolute;
   right: 10px;
   width: 32px;
+  min-width: 32px;
   height: 32px;
+  margin-left: 20px;
 }
