@@ -42,6 +42,10 @@ class JourneyMap extends Component {
           <Marker
             key={step.id}
             position={{ lat: step.bixiStation.pos.coordinates[1], lng: step.bixiStation.pos.coordinates[0] }}
+            icon={{
+              url: '/marker.png',
+              anchor: {x: 12, y: 12}
+            }}
             label={{
               text: String(i + 1),
               color: '#fff',
