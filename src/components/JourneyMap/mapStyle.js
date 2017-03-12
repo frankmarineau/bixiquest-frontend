@@ -1,4 +1,4 @@
-export default 
+export default
 [
     {
         "featureType": "administrative",
@@ -30,6 +30,23 @@ export default
             }
         ]
     },
+    {
+        "featureType": "poi.business",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.school",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+
     {
         "featureType": "poi.park",
         "elementType": "labels",

@@ -34,7 +34,7 @@ class JourneyMap extends Component {
           scaleControl: false,
           streetViewControl: false,
           clickableIcons: false,
-          disableDoubleClickZoom: true,
+          disableDoubleClickZoom: false,
           fullscreenControl: false,
           zoomControl: false,
           styles: mapStyle
@@ -46,7 +46,7 @@ class JourneyMap extends Component {
             position={{ lat: step.bixiStation.pos.coordinates[1], lng: step.bixiStation.pos.coordinates[0] }}
             icon={{
               url: '/marker.png',
-              anchor: { x: 12, y: 12 }
+              anchor: { x: 15, y: 15 }
             }}
             label={{
               text: String(i + 1),
@@ -61,8 +61,8 @@ class JourneyMap extends Component {
             key={place.id}
             position={{ lat: place.place.geometry.location.lat, lng: place.place.geometry.location.lng }}
             icon={{
-              url: '/place.png',
-              anchor: { x: 12, y: 12 }
+              url: '/marker_a.png',
+              anchor: { x: 7, y: 7 }
             }}
           />
         ))}
