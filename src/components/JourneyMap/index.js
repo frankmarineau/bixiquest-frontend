@@ -32,7 +32,7 @@ class JourneyMap extends Component {
           scaleControl: false,
           streetViewControl: false,
           clickableIcons: false,
-          disableDoubleClickZoom: false,
+          disableDoubleClickZoom: true,
           fullscreenControl: false,
           zoomControl: false,
         }}
