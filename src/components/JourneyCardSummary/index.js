@@ -2,11 +2,11 @@ import React from 'react'
 import styles from './styles.scss'
 import CSSModules from 'react-css-modules'
 import InlineSVG from 'svg-inline-react'
-import { flatten } from 'lodash'
+import { flatten, uniq } from 'lodash'
 
-const stepList = steps => flatten(steps.map(step =>
-  step.places.map(place => place.type)
-)).join(', ')
+const stepIcons = steps => uniq(flatten(steps.map(step =>
+  step.places.map(place => place.type_url)
+)))
 
 export const JourneyCardSummary = ({ journey: { name, rating, distance, duration, steps } }) => (
   <div styleName='container'>
@@ -25,8 +25,10 @@ export const JourneyCardSummary = ({ journey: { name, rating, distance, duration
         <div>{duration} min.</div>
       </div>
     </div>
-    <div>
-      {stepList(steps)}
+    <div styleName='icon-container'>
+      {stepIcons(steps).map(icon =>
+        <img styleName='icon' src={icon} />
+      )}
     </div>
   </div>
 )

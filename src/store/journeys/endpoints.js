@@ -18,14 +18,14 @@ export const list = async coords => ({
         id: '21axer332',
         name: 'Awesome place',
         image_url: 'https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg',
-        type: 'restaurant',
+        type_url: 'https://maps.gstatic.com/mapfiles/place_api/icons/zoo-71.png',
         description: 'I love this place. It is the best in the world.',
         pos: [45.505430, -73.571731],
       }, {
         id: '21axer333',
         name: 'Awesome place 2',
         image_url: 'https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg',
-        type: 'bar',
+        type_url: 'https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png',
         description: 'Fun stuff, cool people.',
         pos: [45.506956, -73.569499]
       }]
@@ -41,14 +41,14 @@ export const list = async coords => ({
         id: '21axer332',
         name: 'yo sup',
         image_url: 'https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg',
-        type: 'park',
+        type_url: 'https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png',
         description: 'Pretty.',
         pos: [45.506863, -73.563535]
       }, {
         id: '21axer333',
         name: 'hey gee',
         image_url: 'https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg',
-        type: 'bar',
+        type_url: 'https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png',
         description: 'This bar is IN-SANE.',
         pos: [45.509344, -73.561228]
       }]
@@ -71,14 +71,14 @@ export const list = async coords => ({
         id: '21axer332',
         name: 'Awesome place',
         image_url: 'https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg',
-        type: 'restaurant',
+        type_url: 'https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png',
         description: 'I LOVEEEE THIS PLACE!!!',
         pos: [45.505430, -73.571731]
       }, {
         id: '21axer333',
         name: 'Awesome place 2',
         image_url: 'https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg',
-        type: 'bar',
+        type_url: 'https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png',
         description: 'Worth a look.',
         pos: [45.506956, -73.569499]
       }]
@@ -94,14 +94,14 @@ export const list = async coords => ({
         id: '21axer332',
         name: 'yo sup',
         image_url: 'https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg',
-        type: 'park',
+        type_url: 'https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png',
         description: 'Highly recommended.',
         pos: [45.506863, -73.563535]
       }, {
         id: '21axer333',
         name: 'hey gee',
         image_url: 'https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg',
-        type: 'bar',
+        type_url: 'https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png',
         description: 'Okay-ish.',
         pos: [45.509344, -73.561228]
       }]
