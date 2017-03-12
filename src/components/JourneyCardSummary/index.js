@@ -15,7 +15,7 @@ export const JourneyCardSummary = ({ journey: { name, rating, distance, duration
     <div styleName='statistics'>
       <div styleName='statistic'>
         <InlineSVG src={require('./ic_star_rate_black_18px.svg')} raw styleName='logo' />
-        <div>{distance % 3 + 3 + '.' + (duration % 7 + 3) + 'k'}</div>
+        <div>{distance % 3 + 3 + '' + (duration % 7 + 3)}</div>
       </div>
       <div styleName='statistic'>
         <InlineSVG src={require('./ic_directions_bike_black_18px.svg')} raw styleName='logo' />

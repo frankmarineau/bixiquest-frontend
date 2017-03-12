@@ -6,5 +6,5 @@ export function formatDistance(distance) {
 }
 
 export function formatDuration(duration) {
-  return moment.duration(duration, 'minutes').humanize()
+  return moment.duration(duration, 'seconds').minutes() + ' biking min.'
 }

@@ -1,10 +1,9 @@
 .container {
   padding-top: 10px;
-  padding-left: 10px;
-  background-color: #FFF;
   padding-bottom: 5px;
+  padding: 0 15px;
 
-  border-bottom: solid 1px #eee;
+  border-bottom: solid 1px #ccc;
 
   &:last-child {
     border-bottom: 0;
@@ -14,6 +13,7 @@
 .header {
   display: flex;
   align-items: center;
+  padding: 15px 0;
 }
 
 .thumbnail {
@@ -29,10 +29,12 @@
 .name {
   margin-left: 15px;
   flex-grow: 1;
+  margin: 0 0 0 15px;
 }
 
 .description {
   margin-left: 0;
+  margin-top: 5px;
   font-style: italic;
 }
 

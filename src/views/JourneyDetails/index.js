@@ -3,7 +3,6 @@ import styles from './styles.scss'
 import { connect } from 'react-redux'
 import CSSModules from 'react-css-modules'
 import { fetchJourney } from 'store/journeys/actions'
-import { journeyFromUrl } from 'store/journeys/selectors'
 
 import JourneyMap from 'components/JourneyMap'
 import JourneySummary from 'components/JourneySummary'
@@ -47,7 +46,12 @@ export default class JourneyDetails extends Component {
           <JourneyStep key={step.id} step={step} isFirst={index === 0} stepNumber={index + 1} />
         )}
 
-        <p styleName='the-end'>The End</p>
+        <p styleName='the-end'>
+          This is it! Hope you enjoyed discovering some of my favorite places in the Old Port.
+          <br />
+          <br />
+          Frank
+        </p>
       </div>
     )
   }
