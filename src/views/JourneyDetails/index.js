@@ -35,16 +35,16 @@ export default class JourneyDetails extends Component {
         <JourneyMap
           journey={journey}
           containerElement={
-            <div style={{ height: `400px` }} />
+            <div style={{ height: `350px` }} />
           }
           mapElement={
-            <div style={{ height: `400px` }} />
+            <div style={{ height: `350px` }} />
           }
         />
         <JourneySummary journey={journey} />
 
         {journey.steps.map((step, index) =>
-          <JourneyStep key={step.id} step={step} isFirst={index === 0} stepNumber={index+1} />
+          <JourneyStep key={step.id} step={step} isFirst={index === 0} stepNumber={index + 1} />
         )}
 
         <p styleName='the-end'>The End</p>

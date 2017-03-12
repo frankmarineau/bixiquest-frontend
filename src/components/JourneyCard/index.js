@@ -8,7 +8,7 @@ import JourneyCardSummary from 'components/JourneyCardSummary'
 
 export const JourneyCard = ({ journey }) => (
   <Link to={`/journeys/${journey.id}`} styleName='container'>
-    <div style={{pointerEvents: 'none'}}>
+    <div style={{ pointerEvents: 'none' }}>
       <JourneyMap
         journey={journey}
         containerElement={

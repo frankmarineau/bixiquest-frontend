@@ -6,7 +6,7 @@ const ACTION_HANDLERS = {
   }),
   [setCurrentJourney]: (state, action) => ({
     currentJourney: action.payload
-  }),
+  })
 }
 
 const initialState = {

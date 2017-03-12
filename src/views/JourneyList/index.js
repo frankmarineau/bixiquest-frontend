@@ -19,11 +19,12 @@ const mapActionCreators = {
 export default class JourneyList extends Component {
   componentWillMount() {
     const { journeys, fetchJourneys } = this.props
-    if (!journeys.length) fetchJourneys()
+    if (!journeys || !journeys.length) fetchJourneys()
   }
 
   render() {
     const { journeys } = this.props
+    if (!journeys || !journeys.length) return null
 
     return (
       <div styleName='container'>

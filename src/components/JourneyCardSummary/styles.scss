@@ -31,6 +31,7 @@
 .logo {
   margin-right: 5px;
   height: 20px;
+  fill: $primary-color;
 }
 
 .type {
@@ -51,5 +52,5 @@
   width: 20px;
   height: 20px;
   filter: grayscale(100%);
-  opacity: 0.6;
+  opacity: 0.5;
 }
