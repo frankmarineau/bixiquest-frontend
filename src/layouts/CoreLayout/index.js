@@ -4,7 +4,7 @@ import styles from './styles.scss'
 import CSSModules from 'react-css-modules'
 
 export const CoreLayout = ({ children }) => (
-  <div>
+  <div style={{ height: '100%' }}>
     <Header />
     <div styleName='viewport'>
       {children}
