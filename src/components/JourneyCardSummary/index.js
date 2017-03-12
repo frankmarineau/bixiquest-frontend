@@ -3,6 +3,7 @@ import styles from './styles.scss'
 import CSSModules from 'react-css-modules'
 import InlineSVG from 'svg-inline-react'
 import { flatten, uniq } from 'lodash'
+import { formatDistance } from 'utils'
 
 const stepIcons = steps => uniq(flatten(steps.map(step =>
   step.places.map(place => place.type_url)
@@ -18,7 +19,7 @@ export const JourneyCardSummary = ({ journey: { name, rating, distance, duration
       </div>
       <div styleName='statistic'>
         <InlineSVG src={require('./ic_directions_bike_black_18px.svg')} raw styleName='logo' />
-        <div>{distance} km</div>
+        <div>{formatDistance(distance)}</div>
       </div>
       <div styleName='statistic'>
         <InlineSVG src={require('./ic_access_time_black_18px.svg')} raw styleName='logo' />

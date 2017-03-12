@@ -87,6 +87,7 @@ config.globals = {
   '__DEV__'      : config.env === 'development',
   '__PROD__'     : config.env === 'production',
   '__TEST__'     : config.env === 'test',
+  '__API__'      : JSON.stringify(process.env.API_ENDPOINT),
   '__COVERAGE__' : !argv.watch && config.env === 'test'
 }
 

@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux'
 import location from './location'
-import counter from './counter/reducer'
 import journeys from './journeys/reducer'
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
     location,
-    counter,
     journeys,
     ...asyncReducers
   })
