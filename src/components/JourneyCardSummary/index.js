@@ -27,8 +27,8 @@ export const JourneyCardSummary = ({ journey: { name, rating, distance, duration
       </div>
     </div>
     <div styleName='icon-container'>
-      {stepIcons(steps).map(icon =>
-        <img styleName='icon' src={icon} />
+      {stepIcons(steps).map((icon, index) =>
+        <img key={index} styleName='icon' src={icon} />
       )}
     </div>
   </div>
