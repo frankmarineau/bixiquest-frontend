@@ -20,7 +20,7 @@ export const JourneyStep = ({ step: { murals, places, distance, bixiStation }, i
           styleName='icon'
         />
       </div>
-      <p styleName='distance'>{formatDistance(distance)} to <a styleName='station' href='#'>{bixiStation.name}</a></p>
+      <p styleName='distance'>{distance && formatDistance(distance.value)} to <a styleName='station' href='#'>{bixiStation.name}</a></p>
     </div>
 
     {places.map(place =>
