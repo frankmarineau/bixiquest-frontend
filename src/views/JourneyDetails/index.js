@@ -18,7 +18,8 @@ const mapActionCreators = {
 }
 
 @connect(mapStateToProps, mapActionCreators)
-class JourneyDetails extends Component {
+@CSSModules(styles, { allowMultiple: true })
+export default class JourneyDetails extends Component {
   componentWillMount() {
     const { fetchJourney, journey } = this.props
     if (!journey || journey.id !== this.props.params.journeyId) fetchJourney(this.props.params.journeyId)
@@ -45,9 +46,9 @@ class JourneyDetails extends Component {
         {journey.steps.map((step, index) =>
           <JourneyStep key={step.id} step={step} isFirst={index === 0} stepNumber={index+1} />
         )}
+
+        <p styleName='the-end'>The End</p>
       </div>
     )
   }
 }
-
-export default CSSModules(styles, { allowMultiple: true })(JourneyDetails)
